@@ -8,11 +8,21 @@
 </h2> 
 
 <div align="center">
-  <img src="https://img.shields.io/badge/python-3.8_3.9_3.10_3.11_3.12-brightgreen?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/version-0.0.1-white?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/python-3.8_3.9_3.10_3.11_3.12-brightgreen?style=for-the-badge" alt=""/>
+  <img src="https://img.shields.io/badge/version-0.0.2-white?style=for-the-badge" alt=""/>
 </div>
 
 ## Установка ⬎
 ```bash
 pip install https://github.com/axelof/sqdilities/archive/master.zip
 ```
+
+## Дополнения
+| Geo | Добавляет возможность определять город и другие данные по ip адресу |
+|-----|---------------------------------------------------------------------|
+
+
+## Файлы
+| Название | Примечание         | Ресурс             | Команда                      |
+|----------|--------------------|--------------------|------------------------------|
+| geo.mmdb | Файл с IP адресами | https://sqd.su/geo | ```sqdilities install geo``` | 
