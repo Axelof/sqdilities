@@ -7,8 +7,8 @@ from sqdilities.definitions import geo_file
 CHUNK_SIZE = 1024 * 8
 
 
-def install_geo():
-    if geo_file.exists():
+def install_geo(force: bool = False):
+    if geo_file.exists() and not force:
         return "Geo file is already installed."
 
     print("Downloading geo file...")
@@ -35,11 +35,28 @@ def install_geo():
     return "\rGeo file has been downloaded successfully."
 
 
+def update_geo():
+    file = request.urlopen("https://sqd.su/geo")
+    size = int(file.getheader('Content-Length'))
+
+    if not geo_file.exists():
+        return "Geo file is not installed."
+
+    if geo_file.exists() and geo_file.stat().st_size == size:
+        return "Geo file is up-to-date."
+
+    if not geo_file.exists():
+        install_geo(force=True)
+
+
 def main():
     command = " ".join(sys.argv[1:])
 
     if command == "install geo":
         print(install_geo())
+
+    if command == "update geo":
+        print(update_geo())
 
 
 if __name__ == "__main__":

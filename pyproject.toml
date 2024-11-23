@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "sqdilities"
+version = "0.0.2"
+description = "Набор инструментов для проектов Squad'a."
+authors = ["axelof <me@sqd.su>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/axelof/sqdilities"
+keywords = ["tools", "utilities", "squad"]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+setuptools = "~65.5.0"
+maxminddb = "~2.6.2"
+aiohttp = "~3.10.10"
+tqdm = "~4.66.5"
+progress = "~1.6"
+
+[tool.poetry.extras]
+geo = ["maxminddb"]
+
+[tool.poetry.scripts]
+sqdilities = "sqdilities.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
